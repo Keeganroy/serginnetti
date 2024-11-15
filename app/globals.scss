@@ -1,0 +1,18 @@
+@import "./styles/reset.scss";
+@import "./styles/fonts.scss";
+@import "./styles/vars.scss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: "CenturyGothic", sans-serif;
+  font-weight: 400;
+}
