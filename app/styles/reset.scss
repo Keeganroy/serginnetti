@@ -34,3 +34,9 @@ input[type="number"] {
 input:-webkit-autofill {
   background-clip: text !important;
 }
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
