@@ -1,0 +1,221 @@
+@import "../../app/styles/vars.scss";
+
+.swiper {
+  position: relative;
+}
+
+.slide {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  height: 100svh;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+  }
+}
+
+.info {
+  position: absolute;
+  top: calc(50% + 51px);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  max-width: 930px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 125%;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: $white-color;
+}
+
+.linkBox {
+  max-width: 173px;
+  margin: 75px auto 0 auto;
+}
+
+.link {
+  display: block;
+  color: $white-color;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 16px;
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.linkIcon {
+  position: absolute;
+  right: 95px;
+  bottom: 110px;
+  z-index: 10;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 117px;
+    height: 116px;
+    bottom: -43px;
+    left: -43px;
+    background-image: url("../../public/images/icons/decor.svg");
+    background-repeat: no-repeat;
+
+    @keyframes rotation {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    animation: rotation 20s linear infinite;
+  }
+}
+
+.pagination {
+  position: absolute;
+  bottom: 60px !important;
+  left: calc((100% - min(100%, 1350px)) / 2 + 20px) !important;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+}
+
+.pagination :global(.swiper-pagination-bullet) {
+  background-color: $white-color !important;
+  opacity: 1;
+  margin: 0 !important;
+}
+
+.pagination :global(.swiper-pagination-bullet-active) {
+  background-color: transparent !important;
+  border: 1px solid $white-color !important;
+}
+
+.prev,
+.next {
+  display: none !important;
+}
+
+@media (max-width: 992px) {
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  .title {
+    font-size: 44px;
+  }
+
+  .linkBox {
+    margin-top: 0;
+  }
+
+  .navigation {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .prev,
+  .next {
+    position: relative;
+    display: block !important;
+    width: 39px;
+    height: 39px;
+    background-color: $white-color;
+    border-radius: 50%;
+
+    &::after {
+      content: "" !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 24px;
+      height: 24px;
+      background-image: url("../../public/images/icons/arrow-slider.svg");
+      background-repeat: no-repeat;
+    }
+  }
+
+  .prev::after {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  .linkIcon {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    display: none;
+  }
+
+  .info {
+    width: 75%;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 475px) {
+  .info {
+    width: 85%;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .linkBox {
+    max-width: 198px;
+    width: 100%;
+    margin-top: 0px;
+  }
+
+  .link {
+    background-color: $white-color;
+    color: $black-color;
+    font-size: 10px;
+    text-align: center;
+    border: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .info {
+    width: 96%;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+}
