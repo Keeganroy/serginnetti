@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import classnames from "classnames";
 import { useMedia } from "react-use";
 import { Container } from "../container";
 import { LeftSide } from "./left-side";
