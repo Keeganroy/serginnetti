@@ -36,6 +36,7 @@ model Product {
 
     name     String @unique
     imageUrl String
+    price    Int
 
     variants Variant[]
 
@@ -60,7 +61,6 @@ model Category {
 model Variant {
     id Int @id @default(autoincrement())
 
-    price   Int
     rrp     Int?
     thumbs  Json
     article String?
